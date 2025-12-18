@@ -7,7 +7,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKe
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 
 # --- تنظیمات اصلی ---
-TOKEN = '8513310766:AAGAGtGLTFWdv6v8zmqgJnmma2no60OOWQo'
+TOKEN = '8513310766:AAF-MqXVnAmAYQJmHzKRG38ecHTUMHhjP5c'
 DB_FILE = 'video_db.json'
 CHANNEL_ID = -1003204294473  
 INVITE_LINK = 'https://t.me/+4iAk0H9HSkk2YmZk'

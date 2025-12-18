@@ -6,8 +6,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 
-# --- تنظیمات اصلی ---
-TOKEN = '8513310766:AAF-MqXVnAmAYQJmHzKRG38ecHTUMHhjP5c'
+# --- تنظیمات اصلی با توکن جدید ---
+TOKEN = '8513310766:AAH6ft6CNlR9E9a2Mx40zbXn4Ve9gMMFbNU'
 DB_FILE = 'video_db.json'
 CHANNEL_ID = -1003204294473  
 INVITE_LINK = 'https://t.me/+4iAk0H9HSkk2YmZk'
@@ -42,7 +42,7 @@ def save_db(db):
 user_collections = {}
 last_bot_msg = {}
 
-# چک کردن عضویت
+# چک کردن عضویت اجباری
 async def is_subscribed(context, user_id):
     try:
         member = await context.bot.get_chat_member(chat_id=CHANNEL_ID, user_id=user_id)
@@ -124,7 +124,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             return
         
         db = load_db()
-        new_id = str(len(db) + 1001) # شروع از ۱۰۰۱ برای ظاهر بهتر لینک
+        new_id = str(len(db) + 1001)
         db[new_id] = user_collections.pop(user_id)
         save_db(db)
         
